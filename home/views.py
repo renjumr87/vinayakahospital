@@ -19,7 +19,7 @@ def doctors(request):
 
 # Contact view.
 def contact(request):
-    return render(request, "contacts.html")
+    return render(request, "contact.html")
 
 # Contact view.
 def departments(request):
