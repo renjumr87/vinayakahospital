@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . models import Departments, Doctors
-
+from . forms import BookingForm
 # Index view
 def index(request):
     return render(request, "index.html")
@@ -12,7 +12,16 @@ def about(request):
 
 # Booking view.
 def booking(request):
-    return render(request, "booking.html")
+    if request.method =="POST":
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, 'confirmation.html')
+    form = BookingForm()
+    dict_form = {
+        'form': form
+    }
+    return render(request, "booking.html", dict_form)
 
 # Doctors view.
 def doctors(request):
