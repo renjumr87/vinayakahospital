@@ -1,4 +1,76 @@
 li :hover{
     background-color: gray;
     border-radius: 10px;
-    border: 1px solid yellow;
+}
+
+/* Navigation Bar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(13, 110, 253);
+    color: white;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    margin: 0 15px;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+  }
+  
+  /* Hamburger Menu */
+  .menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: white;
+    margin: 3px 0;
+  }
+  
+  /* Mobile Responsive Styles */
+  @media screen and (max-width: 768px) {
+    .menu-toggle {
+      display: flex; /* Show hamburger menu */
+    }
+  
+    .nav-list {
+      display: none; /* Hide links initially */
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      background-color: rgba(13, 110, 253);
+      flex-direction: column;
+      text-align: center;
+      z-index: 1;
+    }
+  
+    .nav-list.active {
+      display: flex; /* Show links when active */
+    }
+  
+    .nav-list li {
+      margin: 10px 0;
+    }
+  }
+  
